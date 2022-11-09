@@ -8,8 +8,6 @@ import com.guaratecnologia.minhaideiadb.datasource.AppDataBase;
 import com.guaratecnologia.minhaideiadb.model.Cliente;
 
 public class ClienteController extends AppDataBase {
-
-
     public ClienteController(Context context) {
         super(context);
         Log.d(AppUtil.TAG, "ClienteController: Conectado ");

@@ -6,7 +6,7 @@ import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
 public class Cliente implements ICrud {
-    
+    private int id;//chave primaria do banco de dados
     private String nome;
     private String email;
 
@@ -26,6 +26,10 @@ public class Cliente implements ICrud {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public int getId() {return id;}
+
+    public void setId(int id) {this.id = id;}
 
     @Override
     public void incluir() {
