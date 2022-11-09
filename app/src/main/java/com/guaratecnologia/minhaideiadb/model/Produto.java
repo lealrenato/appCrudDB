@@ -5,47 +5,40 @@ import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
-public class Produto implements ICrud {
- 
-
+public class Produto implements ICrud<Produto> {
+    private int id;
     private String nome;
     private String fornecedor;
 
+    public int getId() {return id;}
 
-    public String getNome() {
-        return nome;
-    }
+    public void setId(int id) {this.id = id;}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getNome() {return nome;}
 
-    public String getFornecedor() {
-        return fornecedor;
-    }
+    public void setNome(String nome) {this.nome = nome;}
 
-    public void setFornecedor(String fornecedor) {
-        this.fornecedor = fornecedor;
+    public String getFornecedor() {return fornecedor;}
+
+    public void setFornecedor(String fornecedor) {this.fornecedor = fornecedor;}
+
+    @Override
+    public void incluir(Produto obj) {
+
     }
 
     @Override
-    public void incluir() {
-        Log.i(AppUtil.TAG, "incluir: Produto nome: "+ getNome());
-        Log.i(AppUtil.TAG, "incluir: Produto fornecedor: "+ getFornecedor());
+    public void alterar(Produto obj) {
+
     }
 
     @Override
-    public void alterar() {
-        Log.i(AppUtil.TAG, "alterar: Produto");
+    public void deletar(Produto obj) {
+
     }
 
     @Override
-    public void deletar() {
-        Log.i(AppUtil.TAG, "deletar: Produto");
-    }
+    public void listar(Produto obj) {
 
-    @Override
-    public void listar() {
-        Log.i(AppUtil.TAG, "listar: Produto");
     }
 }

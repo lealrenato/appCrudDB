@@ -5,11 +5,14 @@ import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
-public class Cliente implements ICrud {
+public class Cliente implements ICrud<Cliente> {
     private int id;//chave primaria do banco de dados
     private String nome;
     private String email;
 
+    public int getId() {return id;}
+
+    public void setId(int id) {this.id = id;}
 
     public String getNome() {
         return nome;
@@ -27,28 +30,23 @@ public class Cliente implements ICrud {
         this.email = email;
     }
 
-    public int getId() {return id;}
-
-    public void setId(int id) {this.id = id;}
-
     @Override
-    public void incluir() {
-        Log.i(AppUtil.TAG, "incluir: Cliente nome: "+getNome());
-        Log.i(AppUtil.TAG, "incluir: Cliente email "+getEmail());
+    public void incluir(Cliente obj) {
+
     }
 
     @Override
-    public void alterar() {
-        Log.i(AppUtil.TAG, "alterar: cliente");
+    public void alterar(Cliente obj) {
+
     }
 
     @Override
-    public void deletar() {
-        Log.i(AppUtil.TAG, "deletar: cliente");
+    public void deletar(Cliente obj) {
+
     }
 
     @Override
-    public void listar() {
-        Log.i(AppUtil.TAG, "listar: cliente");
+    public void listar(Cliente obj) {
+
     }
 }

@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.datamodel.ClienteDataModel;
-
+import com.guaratecnologia.minhaideiadb.datamodel.ProdutoDataModel;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -17,16 +17,13 @@ public class AppDataBase extends SQLiteOpenHelper {
 
     public AppDataBase(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-        Log.d(AppUtil.TAG, "AppDataBase: criando banco de dados");
         db = getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL(ClienteDataModel.criarTabela());
-        Log.d(AppUtil.TAG, "onCreate: Tabela Cliente " + ClienteDataModel.criarTabela());
-
+        db.execSQL(ProdutoDataModel.criarTabela());
     }
 
     @Override

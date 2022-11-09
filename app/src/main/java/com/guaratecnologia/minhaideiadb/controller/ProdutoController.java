@@ -1,25 +1,13 @@
 package com.guaratecnologia.minhaideiadb.controller;
 
-import com.guaratecnologia.minhaideiadb.model.Produto;
+import android.content.Context;
+import android.util.Log;
+import com.guaratecnologia.minhaideiadb.api.AppUtil;
+import com.guaratecnologia.minhaideiadb.datasource.AppDataBase;
 
-public class ProdutoController implements ICrud  {
-    @Override
-    public void incluir() {
-        
-    }
-
-    @Override
-    public void alterar() {
-
-    }
-
-    @Override
-    public void deletar() {
-
-    }
-
-    @Override
-    public void listar() {
-
+public class ProdutoController extends AppDataBase {
+    public ProdutoController(Context context) {
+        super(context);
+        Log.d(AppUtil.TAG, "ProdutoController: conectado");
     }
 }
