@@ -10,7 +10,7 @@ public interface ICrud<T>{
     //deletar
     void deletar(T obj);
     //listar
-    void listar(T obj);
+    void List<T> listar();
 
 
 }
