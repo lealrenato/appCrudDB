@@ -2,15 +2,17 @@ package com.guaratecnologia.minhaideiadb.controller;
 
 import com.guaratecnologia.minhaideiadb.model.Cliente;
 
+import java.util.List;
+
 public interface ICrud<T>{
     //incluir
-    void incluir(T obj);
+  public  boolean incluir(T obj);
      //alterar
-    void alterar(T obj);
+  public  boolean alterar(T obj);
     //deletar
-    void deletar(T obj);
+  public  boolean deletar(T obj);
     //listar
-    void List<T> listar();
+  public List<T> listar();
 
 
 }

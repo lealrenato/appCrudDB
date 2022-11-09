@@ -4,10 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
-import com.guaratecnologia.minhaideiadb.datamodel.ClienteDataModel;
 import com.guaratecnologia.minhaideiadb.datamodel.ProdutoDataModel;
 import com.guaratecnologia.minhaideiadb.datasource.AppDataBase;
 import com.guaratecnologia.minhaideiadb.model.Produto;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProdutoController extends AppDataBase implements ICrud<Produto> {
 
@@ -19,29 +20,37 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto> {
     }
 
     @Override
-    public void incluir(Produto obj) {
+    public boolean incluir(Produto obj) {
 
         dadoObjeto = new ContentValues();
         //key  , value
 
-        //dadoObjeto.put(ClienteDataModel.ID,obj.getId());
-        dadoObjeto.put(ClienteDataModel.NOME,obj.getNome());
+        //dadoObjeto.put(ProdutoDataModel.ID,obj.getId());// auto increment
+        dadoObjeto.put(ProdutoDataModel.NOME,obj.getNome());
         dadoObjeto.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
-
+        //enviar dados para a classe appdate
+        return true;
     }
 
     @Override
-    public void alterar(Produto obj) {
-
+    public boolean alterar(Produto obj) {
+        dadoObjeto = new ContentValues();
+        dadoObjeto.put(ProdutoDataModel.ID,obj.getId());// especifica
+        dadoObjeto.put(ProdutoDataModel.NOME,obj.getNome());
+        dadoObjeto.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
+        return true;
     }
 
     @Override
-    public void deletar(Produto obj) {
-
+    public boolean deletar(Produto obj) {
+        dadoObjeto = new ContentValues();
+        dadoObjeto.put(ProdutoDataModel.ID,obj.getId());// especifica
+        return true;
     }
 
     @Override
-    public void listar(Produto obj) {
-
+    public List<Produto> listar() {
+        List<Produto> lista =  new ArrayList<>();
+        return lista;
     }
 }
