@@ -5,6 +5,8 @@ import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
+
+
 public class Cliente{
     private int id;//chave primaria do banco de dados
     private String nome;
