@@ -5,7 +5,7 @@ import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
-public class Produto implements ICrud<Produto> {
+public class Produto{
     private int id;
     private String nome;
     private String fornecedor;
@@ -22,23 +22,5 @@ public class Produto implements ICrud<Produto> {
 
     public void setFornecedor(String fornecedor) {this.fornecedor = fornecedor;}
 
-    @Override
-    public void incluir(Produto obj) {
 
-    }
-
-    @Override
-    public void alterar(Produto obj) {
-
-    }
-
-    @Override
-    public void deletar(Produto obj) {
-
-    }
-
-    @Override
-    public void listar(Produto obj) {
-
-    }
 }

@@ -5,7 +5,7 @@ import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ICrud;
 
-public class Cliente implements ICrud<Cliente> {
+public class Cliente{
     private int id;//chave primaria do banco de dados
     private String nome;
     private String email;
@@ -30,23 +30,5 @@ public class Cliente implements ICrud<Cliente> {
         this.email = email;
     }
 
-    @Override
-    public void incluir(Cliente obj) {
 
-    }
-
-    @Override
-    public void alterar(Cliente obj) {
-
-    }
-
-    @Override
-    public void deletar(Cliente obj) {
-
-    }
-
-    @Override
-    public void listar(Cliente obj) {
-
-    }
 }
