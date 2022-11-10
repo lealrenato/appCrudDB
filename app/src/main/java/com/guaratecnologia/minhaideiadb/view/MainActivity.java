@@ -1,29 +1,41 @@
 package com.guaratecnologia.minhaideiadb.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.guaratecnologia.minhaideiadb.R;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
 import com.guaratecnologia.minhaideiadb.controller.ClienteController;
-import com.guaratecnologia.minhaideiadb.datasource.AppDataBase;
+import com.guaratecnologia.minhaideiadb.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
 
     ClienteController clienteController;
-
+    Cliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Log.d(AppUtil.TAG, "onCreate: App minha ideia");
+        cliente = new Cliente();
+        cliente.setNome("Renato da Silva");
+        cliente.setEmail("renatolealhiss@gmail.com");
 
         clienteController = new ClienteController(getApplicationContext());
 
+        if (clienteController.incluir(cliente)) {
+            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+                    + cliente.getNome() + " e "
+                    + cliente.getEmail(), Toast.LENGTH_LONG).show();
+            Log.i(AppUtil.TAG, "onCreate: Cliente Incluido");
+        } else {
+            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+                    + cliente.getNome() + " e "
+                    + cliente.getEmail(), Toast.LENGTH_LONG).show();
+            Log.e(AppUtil.TAG, "onCreate: Cliente Não incluido");
+        }
     }
 }
