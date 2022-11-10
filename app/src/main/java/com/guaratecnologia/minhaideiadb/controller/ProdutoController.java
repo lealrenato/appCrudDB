@@ -23,13 +23,9 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto> {
     public boolean incluir(Produto obj) {
 
         dadoObjeto = new ContentValues();
-        //key  , value
-
-        //dadoObjeto.put(ProdutoDataModel.ID,obj.getId());// auto increment
         dadoObjeto.put(ProdutoDataModel.NOME,obj.getNome());
         dadoObjeto.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
-        //enviar dados para a classe appdate
-        return true;
+        return insert(ProdutoDataModel.TABELA,dadoObjeto);
     }
 
     @Override
