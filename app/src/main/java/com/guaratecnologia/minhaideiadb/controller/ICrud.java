@@ -1,7 +1,5 @@
 package com.guaratecnologia.minhaideiadb.controller;
 
-import com.guaratecnologia.minhaideiadb.model.Cliente;
-
 import java.util.List;
 
 public interface ICrud<T>{
@@ -10,7 +8,7 @@ public interface ICrud<T>{
      //alterar
   public  boolean alterar(T obj);
     //deletar
-  public  boolean deletar(T obj);
+  public  boolean deletar(int id);
     //listar
   public List<T> listar();
 

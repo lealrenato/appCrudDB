@@ -12,7 +12,6 @@ import com.guaratecnologia.minhaideiadb.controller.ClienteController;
 import com.guaratecnologia.minhaideiadb.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
-
     ClienteController clienteController;
     Cliente cliente;
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         cliente = new Cliente();
-        cliente.setNome("Renato da Silva");
+        cliente.setNome("Renato da Leal Silva");
         cliente.setEmail("renatolealhiss@gmail.com");
 
         clienteController = new ClienteController(getApplicationContext());
