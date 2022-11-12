@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
 import com.guaratecnologia.minhaideiadb.api.AppUtil;
+import com.guaratecnologia.minhaideiadb.datamodel.ClienteDataModel;
 import com.guaratecnologia.minhaideiadb.datamodel.ProdutoDataModel;
 import com.guaratecnologia.minhaideiadb.datasource.AppDataBase;
 import com.guaratecnologia.minhaideiadb.model.Produto;
@@ -29,17 +30,16 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto> {
     }
 
     @Override
+    public boolean deletar(int id) {
+        return deletById(ProdutoDataModel.TABELA,id);
+    }
+
+    @Override
     public boolean alterar(Produto obj) {
         dadoObjeto = new ContentValues();
         dadoObjeto.put(ProdutoDataModel.ID,obj.getId());// especifica
         dadoObjeto.put(ProdutoDataModel.NOME,obj.getNome());
         dadoObjeto.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
-        return true;
-    }
-
-    @Override
-    public boolean deletar(int id) {
-
         return true;
     }
 

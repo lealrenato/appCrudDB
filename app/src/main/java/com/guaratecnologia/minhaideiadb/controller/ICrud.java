@@ -11,6 +11,4 @@ public interface ICrud<T>{
   public  boolean deletar(int id);
     //listar
   public List<T> listar();
-
-
 }

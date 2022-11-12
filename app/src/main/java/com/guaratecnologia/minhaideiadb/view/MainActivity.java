@@ -19,22 +19,47 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        clienteController = new ClienteController(getApplicationContext());
+
         cliente = new Cliente();
+
+        cliente.setId(1);
         cliente.setNome("Renato da Leal Silva");
         cliente.setEmail("renatolealhiss@gmail.com");
 
-        clienteController = new ClienteController(getApplicationContext());
 
-        if (clienteController.incluir(cliente)) {
-            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+
+//        cliente = new Cliente();
+//        cliente.setNome("Renato da Leal Silva");
+//        cliente.setEmail("renatolealhiss@gmail.com");
+
+//
+//        if (clienteController.incluir(cliente)) {
+//            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+//                    + cliente.getNome() + " e "
+//                    + cliente.getEmail(), Toast.LENGTH_LONG).show();
+//            Log.i(AppUtil.TAG, "onCreate: Cliente Incluido");
+//        } else {
+//            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+//                    + cliente.getNome() + " e "
+//                    + cliente.getEmail(), Toast.LENGTH_LONG).show();
+//            Log.e(AppUtil.TAG, "onCreate: Cliente Não incluido");
+//        }
+
+                if (clienteController.deletar(cliente.getId())) {
+            Toast.makeText(MainActivity.this, "Cliente excluido da tabela: "
                     + cliente.getNome() + " e "
                     + cliente.getEmail(), Toast.LENGTH_LONG).show();
-            Log.i(AppUtil.TAG, "onCreate: Cliente Incluido");
+            Log.i(AppUtil.TAG, "onCreate: Cliente excluido");
         } else {
-            Toast.makeText(MainActivity.this, "Cliente inserido na tabela: "
+            Toast.makeText(MainActivity.this, "Cliente excluido da tabela: "
                     + cliente.getNome() + " e "
                     + cliente.getEmail(), Toast.LENGTH_LONG).show();
-            Log.e(AppUtil.TAG, "onCreate: Cliente Não incluido");
+            Log.e(AppUtil.TAG, "onCreate: Cliente Não excluido");
         }
+
+
+
+
     }
 }
